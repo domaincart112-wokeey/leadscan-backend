@@ -112,10 +112,10 @@ function generateId() {
 // ── EMAIL TRANSPORT ───────────────────────────────────────────
 let transporter;
 if (process.env.SMTP_HOST) {
-  transporter = nodemailer.createTransport({
+ transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT) || 587,
-    secure: process.env.SMTP_SECURE === 'true',
+    secure: process.env.SMTP_SECURE === 'true',https://github.com/domaincart112-wokeey/leadscan-backend/blob/main/server.js
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
@@ -123,7 +123,7 @@ if (process.env.SMTP_HOST) {
   });
 } else if (process.env.GMAIL_USER) {
   // Gmail with App Password
-  transporter = nodemailer.createTransport({
+ transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER,
